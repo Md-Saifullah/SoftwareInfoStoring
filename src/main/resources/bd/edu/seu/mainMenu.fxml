@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<SplitPane dividerPositions="0.5214285714285715" prefHeight="220.0" prefWidth="430.0"
+           xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="bd.edu.seu.MainMenuController">
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+    </padding>
+    <GridPane prefHeight="86.0" prefWidth="272.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="80.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="125.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <Label prefHeight="17.0" prefWidth="80.0" text="Owned By ID" GridPane.rowIndex="3"/>
+        <Label text="Project ID" GridPane.rowIndex="1"/>
+        <Label text="Status" GridPane.rowIndex="2"/>
+        <CheckBox fx:id="ownedCheck" mnemonicParsing="false" onAction="#handleOwnedCheckSelection" text="Owned"/>
+        <TextField fx:id="idField" prefHeight="11.0" prefWidth="110.0" GridPane.columnIndex="1"
+                   GridPane.rowIndex="1"/>
+        <TextField fx:id="statusField" prefHeight="12.0" prefWidth="110.0" GridPane.columnIndex="1"
+                   GridPane.rowIndex="2"/>
+        <TextField fx:id="ownedByIdField" prefHeight="6.0" prefWidth="110.0" GridPane.columnIndex="1"
+                   GridPane.rowIndex="3"/>
+        <AnchorPane GridPane.columnSpan="2" GridPane.rowIndex="5">
+            <Button onAction="#handleBugReportButton" fx:id="bugButton" layoutY="4.0" mnemonicParsing="false" text="Report a Bug"/>
+            <Button layoutX="156.0" layoutY="7.0" minWidth="32.0" onAction="#handleQueryButton"
+                    prefHeight="19.0" text="Query"/>
+            <Button fx:id="cancelButton" layoutX="94.0" layoutY="6.0" mnemonicParsing="false"
+                    onAction="#handleCancelButton" text="Cancel"/>
+        </AnchorPane>
+        <Label text="Description" GridPane.rowIndex="4"/>
+        <Button minWidth="52.0" onAction="#handleLogOutButton" prefHeight="25.0" prefWidth="59.0" text="Log out"
+                GridPane.columnIndex="1" GridPane.halignment="RIGHT"/>
+        <TextArea fx:id="descriptionArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1"
+                  GridPane.rowIndex="4"/>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="6">
+            <Button onAction="#handleUploadButton" fx:id="uploadButton" layoutY="5.0" mnemonicParsing="false" text="Upload"/>
+            <Button onAction="#handleUpdateButton" fx:id="updateButton" layoutX="65.0" layoutY="5.0" mnemonicParsing="false" text="Update"/>
+            <Button onAction="#handleDownloadButton" fx:id="downloadButton" layoutX="131.0" layoutY="5.0" minWidth="39.0" mnemonicParsing="false"
+                    prefHeight="17.0" prefWidth="71.0" text="Download"/>
+        </AnchorPane>
+    </GridPane>
+    <TableView fx:id="tableView" onMouseClicked="#handleSelectFromTable" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="102.0" text="Project ID"/>
+            <TableColumn fx:id="ownedByColumn" prefWidth="103.0" text="Owned By"/>
+        </columns>
+    </TableView>
+</SplitPane>

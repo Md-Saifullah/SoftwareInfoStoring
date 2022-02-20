@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="220.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd.edu.seu.AllProjectQueryController">
+    <TableView fx:id="tableView" prefHeight="233.0" prefWidth="430.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="62.0" text="Project ID" />
+            <TableColumn fx:id="ownedByColumn" minWidth="0.0" prefWidth="67.0" text="Owned by" />
+            <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="41.0" text="Status" />
+            <TableColumn fx:id="descriptionColumn" minWidth="0.0" prefWidth="134.0" text="Description" />
+         <TableColumn fx:id="downloadedColumn" maxWidth="334.0" minWidth="0.0" prefWidth="77.0" text="downloaded" />
+         <TableColumn fx:id="bugColumn" maxWidth="334.0" minWidth="0.0" prefWidth="47.0" text="Bug" />
+        </columns>
+    </TableView>
+    <Button layoutX="-6.0" layoutY="221.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="4.0" prefWidth="52.0" text="Back" AnchorPane.leftAnchor="10.0" />
+
+</AnchorPane>

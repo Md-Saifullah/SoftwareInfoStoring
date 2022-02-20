@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="221.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd.edu.seu.UploadController">
+   <GridPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="155.0" />
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="282.0" minWidth="10.0" prefWidth="266.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="13.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+          <Button fx:id="backButton" minWidth="39.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="17.0" prefWidth="71.0" text="Back" GridPane.rowIndex="5" />
+         <TextArea fx:id="descriptionArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <Label prefHeight="45.0" prefWidth="95.0" text="Category" />
+         <Label text="Description" GridPane.rowIndex="2" />
+         <Label text="Depends on" GridPane.rowIndex="3" />
+         <Button mnemonicParsing="false" onAction="#handleUploadButton" text="Upload" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         <Label text="Status" GridPane.rowIndex="1" />
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+            <children>
+               <CheckBox fx:id="catA" mnemonicParsing="false" text="A     " />
+               <CheckBox fx:id="catB" mnemonicParsing="false" text="B     " />
+               <CheckBox fx:id="catC" mnemonicParsing="false" text="C     " />
+               <CheckBox fx:id="catD" mnemonicParsing="false" text="D" />
+            </children>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <children>
+               <CheckBox fx:id="statusD" mnemonicParsing="false" onAction="#handleStatusDCheck" text="D                   " />
+               <CheckBox fx:id="statusP" mnemonicParsing="false" onAction="#handleStatusPCheck" text="P                    " />
+            </children>
+         </HBox>
+         <ChoiceBox fx:id="choiceBoxDepends" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         <Label fx:id="warningLabel" prefHeight="17.0" prefWidth="431.0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+      </children>
+   </GridPane>
+</AnchorPane>
